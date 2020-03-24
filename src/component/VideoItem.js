@@ -7,16 +7,17 @@ const VideoItem = ({video, onVideoSelect}) => {
     
     return (
         //with onClick we shoul call video and onVideoSelect togather
-        //so we need a function below with argument video
-        <div onClick={() => onVideoSelect(video)}className='ui horizontal segments'>
-            <div clasname='ui segment'>
-            <img  src={video.snippet.thumbnails.medium.url}  alt={video.snippet.title}/>
-            </div> 
-            <div clasname='ui segment' style={{verticalAlign:'center'}}>
-            {video.snippet.title}
+        <div onClick={() => onVideoSelect(video)} className="ui link cards">
+            <div className="card">
+                <div className="image">
+                <img src={video.snippet.thumbnails.medium.url} alt={video.snippet.title}/>
+                </div>
+                <div className="content">
+                <div className="header">{video.snippet.title}</div>
+                </div>
             </div>
-
         </div>
+            
     )
 }
 export default VideoItem;

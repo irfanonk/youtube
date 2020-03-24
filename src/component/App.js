@@ -35,20 +35,17 @@ export default class App extends React.Component {
     render () {
         return (
             <div className="ui container" style={{marginTop: '10px'}}>
-                <div>
+                <div className="row">
                 <SearchBar onUserSubmit={this.onUserSubmit}/>
                 </div>
-                <div >
-                    <div>
-                    <VideoDetail selectedVideo={this.state.selectedVideo} />
-                    </div>
-                    <div >
-                    <VideoList 
-                    onVideoSelect = {this.onVideoSelect}
-                    videosArray={this.state.submittedVideos}/>
-                    </div>
+                <div className="row">
+                <VideoDetail selectedVideo={this.state.selectedVideo} />
                 </div>
-
+                <div className="row"  style={{marginTop: '10px'}}>
+                <VideoList 
+                onVideoSelect = {this.onVideoSelect}
+                videosArray={this.state.submittedVideos}/>
+                </div>
             </div>
         )
     }

@@ -6,14 +6,16 @@ import React from 'react';
     if (selectedVideo != null) {
         const srcUrl = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`
         return (
-            <div>
-                <div>
+            <div className="card">
+                <div className="image">
                     <iframe src={srcUrl}  
-                    title={selectedVideo.snippet.title}  width="720" height="400"
+                    title={selectedVideo.snippet.title}  width="100%" height="500"
                     />
-                </div>
-                <div>{selectedVideo.snippet.title}</div>
-                <div>{selectedVideo.snippet.description} </div>
+            </div>
+            <div className="content">
+                <h1>{selectedVideo.snippet.title}</h1>
+                <h3>{selectedVideo.snippet.description} </h3>
+            </div>
             </div>
         )
     }
